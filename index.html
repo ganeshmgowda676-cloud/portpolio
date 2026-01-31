@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            background-color:rgb(228, 206, 206);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+        .card{
+            background-color: rgb(43, 198, 209);
+            border-radius:20px;
+            width:350px;
+            padding:30px 20px;
+            text-align:center;
+            box-shadow:0 8px 20px rgba(235, 12, 12, 0.952);
+            animation:fadeln 1s ease forwards;
+
+        }
+        .card img{
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            border:4px solid rgba(108, 2, 129, 0.356);
+            object-fit:cover;
+            animation:popln 0.8s ease forwards;
+            cursor:pointer;
+        }
+        .card h2{
+            margin:15px 0  0 15px;
+            font-weight:normal;
+            color:black;    
+        }
+        .card h4{
+            margin:0px 0 5px 0;
+            font-size:22px;
+            color:black; 
+        }
+        .p{
+            font-size:14px;
+            color:rgb(16, 16, 56);
+            line-height:1.5;
+            margin-bottom:20px;
+        }
+        .skills{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            gap:8px;
+            margin-bottom:20px;
+
+        }
+        .skills span{
+            background-color: rgb(200, 183, 163);
+            color:aliceblue;
+            padding: 5px 10px;
+            border-radius:12px;
+            font-size:12px;
+            transition:transform 0.3s,background-color 0.3s;
+            cursor:pointer;
+
+        }
+        .skills span:hover{
+            transform: scale(1.1);
+            background-color: rgb(200, 219, 213);
+
+        }
+        .btn{
+            display: flex;
+            justify-content:center;
+            gap:15px;
+            margin-bottom: 15px;
+        }
+        .btn button{
+            padding:9px 16px;
+            border:none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition:transform 0.3s,background-color 0.3s;
+
+        }
+        .btn-contact{
+            background-color: rgb(198, 184, 210);
+            color:rgb(45, 35, 35);
+        }
+        .btn-contact:hover{
+            background-color: rgb(126, 117, 108);
+            transform: scale(1.05);
+
+        }
+        .btn-cv{
+            background-color: rgb(204, 171, 204);
+            color: azure;
+        }
+        .btn-cv:hover{
+            background-color:rgb(15, 15, 15);
+            transform: scale(1.05);
+        }
+        .footer{
+            display:flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color:blueviolet;
+            margin-top: 10px;
+        }
+        @keyframes fadeln{
+            from{opacity: 0;transform: translate(20px);}
+            to{opacity: 1;transform: translate(0);}
+        }
+        @keyframes popln{
+            from{opacity: 0;transform: translate scale(0.5);}
+            to{opacity: 1;transform: translate scale(1);}
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="gani2.jpeg"alt="profile photo">
+        <h2>GANESH.M</h2>
+        <h4>BACHALOR OF COMPUTER APPLICATION</h4>
+
+        <p>
+            iam a computer Science student in Sri jagadguru renukacharya college of Arts, science, commerce.
+            Learning about new technologies always fascinate  me.
+            i aspire to build new tech which helps day-to-day problems. 
+        </P>
+        <div class="skills">
+            <span>python programming</span><br>
+            <span>c</span><br>
+            <span>HTML</span><br>
+            <span>java</span><br>
+            <span>C++</span><br>
+        </div>
+        <div class="footer">
+            <button class="btn-contact">Contact Me</button>
+            <button class="btn-cv">Download CV</button>
+        </div>
+
+    </div>
+    <script>
+        document.querySelector(".btn-contact").addEventListener("click",function()
+        {alert("contact Details:\n\nEmail:ganeshmgowda676@gmail.com\nphone:+91 9844996588");
+
+        });
+        document.querySelector(".btn-cv").addEventListener("click",function(){
+        alert("CV download will start soon(demo).");
+    });
+
+    let skills=document.querySelectorAll(".skills span");
+    skills.forEach(function(skill){
+        skill.addEventListener("click",function(){
+            alert("skill:"+this.innerText);
+        });
+    });
+    document.querySelector(".card img").addEventListener("click",function(){
+        alert("Hello welcome To My Profile!");
+    });
+
+
+    </script>
+</body>
+</html>
